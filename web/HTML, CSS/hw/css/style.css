@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'Arkhip';
+	src: url('../fonts/arkhip.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/arkhip.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/arkhip.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/arkhip.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/arkhip.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/arkhip.svg#arkhip') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+html {
+    font-family: Arkhip;
+    background-color: rgb(140, 215, 245);
+}
+
+.album {
+    vertical-align: middle;
+    width: 100px;
+}
+
+.bordered_text {
+    border: 5px solid rgb(115, 190, 70);
+    padding: 10px;
+    text-align: center;
+}
+
+.main_title{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+a, h2{
+    color: rgb(160, 70, 155);
+}
+
+a:hover{
+    color: rgb(255, 240, 0);
+}
+
+.img_middle{
+    text-align: center;
+}
+
+.start_img{
+    width: 300px;
+}
+
+.conclusion_text{
+    color: rgb(0, 115, 190);
+    font-size: 22px;
+}
