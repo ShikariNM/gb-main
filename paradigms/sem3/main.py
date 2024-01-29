@@ -86,7 +86,7 @@ class Game:
             if win is None:
                 print("Игра завершена по желанию игрока.")
                 return
-            if self.field.is_filled():
+            if self.field.is_filled() and not win:
                 print("Игра завершилась нечьей!")
                 return
         print(f'{"Первый" if is_cross else "Второй"} игрок выйграл!')
