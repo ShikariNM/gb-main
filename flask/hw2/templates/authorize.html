@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<form action="/authorize" method="post">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <div>
+            <label>Enter your name:</label>
+            <input type="text" name="name" placeholder="Name">
+        </div>
+        <div>
+            <label>Enter your email:</label>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <input type="submit" value="Log in">
+    </div>
+</form>
+{% endblock %}

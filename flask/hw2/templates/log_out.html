@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">Glad to see you {{ name }}</div>
+<hr>
+<form action="/log_out/{{ name }}" method="post">
+    <div class="container">
+        <button type="submit">Log out</button>
+    </div>
+</form>
+{% endblock %}
