@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ client.name }}
+{% endblock %}
+
+{% block content %}
+What period would you like to see ordered products for?<br>
+<a href="{% url 'products_for_days' client.id 7 %}">7</a><br>
+<a href="{% url 'products_for_days' client.id 30 %}">30</a><br>
+<a href="{% url 'products_for_days' client.id 365 %}">365</a>
+{% endblock %}
