@@ -23,7 +23,7 @@ class ProductsForDays(View):
     def get(self, request, client_id, days):
         client = get_object_or_404(Client, pk=client_id)
         target_date = date.today() - timedelta(days=days)
-        orders = Order.objects.filter(client=client, placing_date__gt=target_date)
+        orders = Order.objects.filter(client=client, placing_date__gt=target_date).order_by('placing_date')
         print(len(orders))
         products = set()
         for order in orders:
