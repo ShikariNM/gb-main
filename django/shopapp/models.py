@@ -19,6 +19,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     stock = models.IntegerField(default=1)
     supplement_date = models.DateField(default=timezone.now)
+    image = models.ImageField(upload_to='product_images', null=True)
 
     def __str__(self):
         return f'{self.pk} - {self.title}'

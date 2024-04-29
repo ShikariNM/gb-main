@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Product image addition
+{% endblock %}
+
+{% block content %}
+<h3>{{ message }}</h3>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

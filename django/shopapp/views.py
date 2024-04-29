@@ -3,7 +3,8 @@ from django.views import View
 
 from datetime import date, timedelta
 
-from .models import Client, Order
+from .models import Client, Order, Product
+from .forms import ImageForm
 
 
 class Clients(View):
@@ -34,3 +35,24 @@ class ProductsForDays(View):
             'products': products,
         }
         return render(request, 'shopapp/products_for_days.html', context)
+
+
+class AddProductImage(View):
+    def get(self, request, product_id):
+        form = ImageForm()
+        message = 'Upload image:'
+        return render(request, 'shopapp/add_product_image.html', {'form': form,
+                                                                  'message': message})
+
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.cleaned_data['image']
+            product.image = image
+            product.save()
+            message = 'The image has been added'
+        else:
+            message = 'Form is not valid'
+        return render(request, 'shopapp/add_product_image.html', {'form': form,
+                                                                  'message': message})
