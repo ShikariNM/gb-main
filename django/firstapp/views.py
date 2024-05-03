@@ -8,10 +8,7 @@ logger = logging.getLogger(__name__)
 
 def index(request):
     logger.info('Index page was visited')
-    html = '''
-           <h1>многострочный текст с HTML-вёрсткой и данными о моем первом Django-сайте</h1>
-           '''
-    return HttpResponse(html)
+    return render(request, 'firstapp/index.html', {'title': 'Index'})
 
 
 def about(request):
